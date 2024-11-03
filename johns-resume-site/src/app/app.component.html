@@ -1,0 +1,31 @@
+<!-- Header with Navigation Buttons and Search -->
+<mat-toolbar color="primary">
+  <span>Johnathan Rossi</span>
+  
+  <!-- Spacer to push navigation to the right -->
+  <span class="spacer"></span>
+  
+  <!-- Navigation Buttons -->
+   <!-- Navigation Buttons with [routerLink] binding format -->
+   <button mat-button [routerLink]="['/home']">Home</button>
+   <button mat-button [routerLink]="['/projects']">Projects</button>
+   <button mat-button [routerLink]="['/contact']">Contact</button>
+   <button mat-button [routerLink]="['/about-me']">About Me</button>
+  
+  <!-- Search Icon on the Far Right -->
+  <button mat-icon-button (click)="toggleSearch()" aria-label="Search">
+    <mat-icon>search</mat-icon>
+  </button>
+</mat-toolbar>
+
+<!-- Conditionally Display Search Input -->
+<div *ngIf="showSearch" class="search-container">
+  <mat-form-field appearance="outline">
+    <mat-label>Search</mat-label>
+    <input matInput placeholder="Search the site" (input)="onSearch($event)">
+  </mat-form-field>
+</div>
+
+<router-outlet></router-outlet>
+
+<app-footer></app-footer>
