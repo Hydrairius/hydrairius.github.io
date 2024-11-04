@@ -9,10 +9,14 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { FooterComponent } from './footer/footer.component'; // Import FooterComponent
+import { FormsModule } from '@angular/forms'; // Import FormsModule here
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
+  
   imports: [RouterOutlet, RouterModule,
     CommonModule,
     MatToolbarModule,
@@ -21,7 +25,13 @@ import { FooterComponent } from './footer/footer.component'; // Import FooterCom
     MatInputModule,
     MatFormFieldModule,
     MatSidenavModule,
+    FormsModule,
+    ReactiveFormsModule,
     FooterComponent
+    ],
+    providers: [
+      
+
     ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
@@ -30,8 +40,10 @@ export class AppComponent {
   title = 'Johnathan Rossi';
   showSearch: boolean = false; // Ensure this property is defined
 
+  searchActive = false;
+
   toggleSearch() {
-    this.showSearch = !this.showSearch;
+    this.searchActive = !this.searchActive;
   }
 
   onSearch(event: Event) {

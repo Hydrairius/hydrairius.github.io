@@ -1,36 +1,123 @@
+// Import font for the theme
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
 
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
-// Plus imports for other components in your app.
-
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
-@include mat.core();
-
-// Define the theme object.
-$johns-resume-site-theme: mat.define-theme((
-  color: (
-    theme-type: light,
-    primary: mat.$azure-palette,
-    tertiary: mat.$blue-palette,
-  ),
-  density: (
-    scale: 0,
-  )
-));
-
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-:root {
-  @include mat.all-component-themes($johns-resume-site-theme);
+// Body background and base font styles
+body {
+  font-family: 'Uncial Antiqua', serif;
+  background-color: #000000 !important; // Pure black background
+  color: #e0e0e0 !important; // Light gray text for readability
+  margin: 0;
+  padding: 0;
 }
 
-// Comment out the line below if you want to use the pre-defined typography utility classes.
-// For more information: https://material.angular.io/guide/typography#using-typography-styles-in-your-application.
-// @include mat.typography-hierarchy($johns-resume-site-theme);
+// Header Toolbar Styling
+mat-toolbar.header-toolbar {
+  background-color: #111111 !important; // Slightly lighter black for header contrast
+  color: #b22222 !important; // Darker red for title
+  padding: 20px 40px !important;
+  display: flex !important;
+  align-items: center !important;
+}
 
-// Comment out the line below if you want to use the deprecated `color` inputs.
-// @include mat.color-variants-backwards-compatibility($johns-resume-site-theme);
+// Spacer to push items to the right
+.spacer {
+  flex: 1 1 auto;
+}
+
+// Navigation Link Styles
+.header-toolbar .nav-item {
+  color: #ffffff !important;
+  font-weight: bold !important;
+  margin-right: 15px !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+}
+
+.header-toolbar .nav-item:hover {
+  border-bottom: 2px solid #b22222; // Red underline on hover
+}
+
+
+.site-title {
+  font-size: 1.5rem !important;
+  font-weight: bold !important;
+  color: #ffffff !important; // Darker red for branding
+}
+// Override Angular Material button styling globally
+button {
+  background-color: #b22222 !important; // Darker red background for primary buttons
+  color: #ffffff !important; // White text
+  padding: 10px 20px !important;
+  border: none !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  font-weight: bold !important;
+}
+
+button:hover {
+  background-color: #cc0000 !important; // Darker red on hover
+  color: #ffffff !important; // White text stays the same
+}
+
+// Card styling (for individual content areas or sections)
+.rustic-card {
+  background-color: #111111 !important; // Matches main content background
+  color: #ffffff !important;
+  padding: 20px !important;
+  border: 1px solid #b22222 !important; // Darker red border to define the card
+  border-radius: 8px !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6) !important;
+  margin: 20px 0 !important;
+}
+
+// Navigation Links in Header - No background, white text, red border on hover
+.header-toolbar button {
+  color: #ffffff !important; // White text
+  font-weight: bold !important;
+  margin-right: 15px !important; // Space between nav items
+  text-transform: uppercase !important;
+  padding: 8px 16px !important;
+  border: none !important; // No border by default
+  background: none !important; // No background
+}
+
+.header-toolbar button:hover {
+  color: #ffffff !important; // Keep text white on hover
+  border-bottom: 2px solid #b22222 !important; // Red bottom border on hover
+}
+
+// Spacer
+.spacer {
+  flex: 1 1 auto;
+}
+
+// Search Icon and Search Container
+.header-toolbar button.mat-icon-button {
+  color: #ffffff !important; // White for the icon
+}
+
+
+
+// Footer Styling
+footer {
+  background-color: #111111 !important; // Matches header background
+  color: #ffffff !important; // Darker red text color for footer
+  padding: 20px !important;
+  text-align: center !important;
+  border-top: 2px solid #b22222 !important; // Darker red border at the top
+  font-size: 1.25rem !important;
+}
+
+// Main Content Styling
+main {
+
+  margin: auto !important;
+  
+ 
+  
+  background-color: #000000 !important; // Slightly lighter black for main content area
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.6) !important; // Soft shadow for depth
+  border-radius: 8px !important;
+}
+
+

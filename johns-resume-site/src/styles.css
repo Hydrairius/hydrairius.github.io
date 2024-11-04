@@ -1,4 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+    background-color: #f9f5e9; 
+    font-family: 'Cinzel', serif;
+    background-image: url('/assets/parchment-texture.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #333; 
+  }
+  
+
+
