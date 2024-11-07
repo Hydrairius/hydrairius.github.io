@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -185,6 +185,12 @@ body {
   line-height: 1.5;
 }
 
+.cta-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Optional for spacing */
+}
+
 .cta-button {
   background-color: #b22222; /* Red background */
   color: #ffffff;
@@ -199,3 +205,4 @@ body {
 .cta-button:hover {
   background-color: #8b0000; /* Darker red on hover */
 }
+
