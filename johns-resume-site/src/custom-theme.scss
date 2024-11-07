@@ -1,123 +1,106 @@
-// Import font for the theme
-@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-// Body background and base font styles
 body {
-  font-family: 'Uncial Antiqua', serif;
-  background-color: #000000 !important; // Pure black background
-  color: #e0e0e0 !important; // Light gray text for readability
-  margin: 0;
-  padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #121212 !important; /* Dark background for consistency */
+    color: #d9d9d9 !important; /* Light grey text for readability */
+    margin: 0;
+    padding: 0;
 }
 
-// Header Toolbar Styling
 mat-toolbar.header-toolbar {
-  background-color: #111111 !important; // Slightly lighter black for header contrast
-  color: #b22222 !important; // Darker red for title
-  padding: 20px 40px !important;
-  display: flex !important;
-  align-items: center !important;
+    background-color: #000000 !important; /* Black background */
+    color: #ffffff !important; /* White text */
+    padding: 20px 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    border-bottom: 2px solid #b22222 !important; /* Red bottom border */
 }
 
-// Spacer to push items to the right
 .spacer {
-  flex: 1 1 auto;
+    flex: 1 1 auto;
 }
 
-// Navigation Link Styles
 .header-toolbar .nav-item {
-  color: #ffffff !important;
-  font-weight: bold !important;
-  margin-right: 15px !important;
-  text-transform: uppercase !important;
-  text-decoration: none !important;
+    color: #ffffff !important; /* White text */
+    font-weight: bold !important;
+    margin-right: 15px !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease-in-out;
 }
 
 .header-toolbar .nav-item:hover {
-  border-bottom: 2px solid #b22222; // Red underline on hover
+    color: #b22222 !important; /* Red accent on hover */
+    border-bottom: 2px solid #b22222 !important;
 }
-
 
 .site-title {
-  font-size: 1.5rem !important;
-  font-weight: bold !important;
-  color: #ffffff !important; // Darker red for branding
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+    color: #b22222 !important; /* Red color for branding */
 }
-// Override Angular Material button styling globally
+
 button {
-  background-color: #b22222 !important; // Darker red background for primary buttons
-  color: #ffffff !important; // White text
-  padding: 10px 20px !important;
-  border: none !important;
-  border-radius: 4px !important;
-  cursor: pointer !important;
-  font-weight: bold !important;
+    background-color: #b22222 !important; /* Red for buttons */
+    color: #ffffff !important; /* White text */
+    padding: 10px 20px !important;
+    border: none !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    font-weight: bold !important;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 button:hover {
-  background-color: #cc0000 !important; // Darker red on hover
-  color: #ffffff !important; // White text stays the same
+    background-color: #8b0000 !important; /* Darker red on hover */
+    box-shadow: 0px 4px 8px rgba(139, 0, 0, 0.4) !important; /* Subtle red shadow */
+    color: #ffffff !important;
 }
 
-// Card styling (for individual content areas or sections)
 .rustic-card {
-  background-color: #111111 !important; // Matches main content background
-  color: #ffffff !important;
-  padding: 20px !important;
-  border: 1px solid #b22222 !important; // Darker red border to define the card
-  border-radius: 8px !important;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6) !important;
-  margin: 20px 0 !important;
+    background-color: #1b1b1b !important; /* Dark grey for cards */
+    color: #d9d9d9 !important; /* Light grey text */
+    padding: 20px !important;
+    border: none !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important; /* More defined shadow */
+    margin: 20px 0 !important;
 }
 
-// Navigation Links in Header - No background, white text, red border on hover
 .header-toolbar button {
-  color: #ffffff !important; // White text
-  font-weight: bold !important;
-  margin-right: 15px !important; // Space between nav items
-  text-transform: uppercase !important;
-  padding: 8px 16px !important;
-  border: none !important; // No border by default
-  background: none !important; // No background
+    color: #ffffff !important; /* White text */
+    font-weight: bold !important;
+    margin-right: 15px !important;
+    text-transform: uppercase !important;
+    padding: 8px 16px !important;
+    border: none !important;
+    background: none !important;
 }
 
 .header-toolbar button:hover {
-  color: #ffffff !important; // Keep text white on hover
-  border-bottom: 2px solid #b22222 !important; // Red bottom border on hover
+    color: #b22222 !important; /* Red color on hover */
+    border-bottom: 2px solid #b22222 !important;
 }
 
-// Spacer
-.spacer {
-  flex: 1 1 auto;
-}
-
-// Search Icon and Search Container
 .header-toolbar button.mat-icon-button {
-  color: #ffffff !important; // White for the icon
+    color: #ffffff !important; /* White for icons */
 }
 
-
-
-// Footer Styling
 footer {
-  background-color: #111111 !important; // Matches header background
-  color: #ffffff !important; // Darker red text color for footer
-  padding: 20px !important;
-  text-align: center !important;
-  border-top: 2px solid #b22222 !important; // Darker red border at the top
-  font-size: 1.25rem !important;
+    background-color: #000000 !important; /* Black matching the header */
+    color: #d9d9d9 !important; /* Softer light grey text */
+    padding: 20px !important;
+    text-align: center !important;
+    border-top: 2px solid #b22222 !important; /* Red border */
+    font-size: 1.25rem !important;
 }
 
-// Main Content Styling
 main {
-
-  margin: auto !important;
-  
- 
-  
-  background-color: #000000 !important; // Slightly lighter black for main content area
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.6) !important; // Soft shadow for depth
-  border-radius: 8px !important;
+    margin: auto !important;
+    background-color: #1b1b1b !important; /* Dark grey background for main content */
+    color: #d9d9d9 !important; /* Light grey text for readability */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2) !important; /* Slightly more pronounced shadow for depth */
+    border-radius: 8px !important;
+    padding: 0px !important; /* Added padding for better content spacing */
 }
-
-

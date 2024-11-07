@@ -13,7 +13,7 @@ export class ProjectsComponent implements OnInit {
   projectsByCategory: { [key: string]: any[] } = {}; // Grouped projects by category
   expandedCategories: { [key: string]: boolean } = {}; // Track collapsed/expanded state for each category
   selectedProject: any = null;
- 
+
   private sheetId = '1Csk8Np3duQIwkNWkN9GpM24X0sXokuZIqYff1Y9w3Aw';
   private apiKey = 'AIzaSyDd8wJc-eyZeL-_vRjUJtgCLWUJntMeHsg';
 
@@ -62,8 +62,18 @@ export class ProjectsComponent implements OnInit {
   }
 
   selectProject(project: any) {
-    this.selectedProject = project;
+    console.log('Project selected:', project); // Debugging line
+    this.selectedProject = {
+      title: project['Project Title'],
+      requirements: project['Requirements'] || 'No requirements provided.',
+      summary: project['Description'] || 'No summary provided.',
+      takeaways: project['Takeaways'] || 'No takeaways provided.',
+      skills: project['Skills'] || [],
+      url: project['URL'],
+      codeUrl: project['Code URL']
+    };
   }
+  
 
   getCategories(): string[] {
     return Object.keys(this.projectsByCategory);

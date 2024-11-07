@@ -1,43 +1,52 @@
 <div class="projects-container">
-    <!-- Sidebar with Categories and Project Titles -->
-    <div class="sidebar">
-      <div *ngFor="let category of getCategories()">
-        <!-- Category Header with Toggle -->
-        <div class="category-header" (click)="toggleCategory(category)">
-          {{ category }}
-          <span class="toggle-icon">{{ expandedCategories[category] ? '-' : '+' }}</span>
-        </div>
-  
-        <!-- Project Titles under Each Category -->
-        <ul *ngIf="expandedCategories[category]">
-          <li
-            *ngFor="let project of projectsByCategory[category]"
-            (click)="selectProject(project)"
-            [class.active]="project === selectedProject"
-          >
-            {{ project['Project Title'] }}
-          </li>
-        </ul>
+  <!-- Sidebar with Categories -->
+  <div class="sidebar">
+    <div *ngFor="let category of getCategories()">
+      <!-- Category Header with Toggle -->
+      <div class="category-header" (click)="toggleCategory(category)">
+        {{ category }}
+        <span class="toggle-icon">{{ expandedCategories[category] ? '-' : '+' }}</span>
       </div>
-    </div>
-  
-    <!-- Main Content to Display Selected Project Details -->
-    <div class="project-details" *ngIf="selectedProject">
-      <h2>{{ selectedProject['Project Title'] }}</h2>
-      <p class="description">{{ selectedProject['Description'] }}</p>
-  
-      <h4>Skills Used:</h4>
-      <ul class="skills-list">
-        <li *ngFor="let skill of selectedProject['Skills']">{{ skill }}</li>
+
+      <!-- Project Titles under Each Category -->
+      <ul *ngIf="expandedCategories[category]">
+        <li
+          *ngFor="let project of projectsByCategory[category]"
+          (click)="selectProject(project)"
+          [class.active]="project === selectedProject"
+        >
+          {{ project['Project Title'] }}
+        </li>
       </ul>
-  
-      <h4>Key Takeaways:</h4>
-      <p class="takeaways">{{ selectedProject['Takeaways'] }}</p>
-  
-      <div class="links">
-        <a *ngIf="selectedProject['URL']" [href]="selectedProject['URL']" target="_blank">View Project</a>
-        <a *ngIf="selectedProject['Code URL']" [href]="selectedProject['Code URL']" target="_blank">View Code</a>
-      </div>
     </div>
   </div>
-  
+
+  <!-- Main Content with Project Sections -->
+  <div class="project-details" *ngIf="selectedProject">
+    <div class="project-section">
+      <h3>Requirements</h3>
+      <p>{{ selectedProject.requirements }}</p>
+    </div>
+
+    <div class="project-section alt-section">
+      <h3>Summary</h3>
+      <p>{{ selectedProject.summary }}</p>
+    </div>
+
+    <div class="project-section">
+      <h3>Key Takeaways</h3>
+      <p>{{ selectedProject.takeaways }}</p>
+    </div>
+
+    <div class="project-section alt-section">
+      <h3>Skills Used</h3>
+      <ul class="skills-list">
+        <li *ngFor="let skill of selectedProject.skills">{{ skill }}</li>
+      </ul>
+    </div>
+
+    <div class="view-project-section">
+      <a *ngIf="selectedProject.url" [href]="selectedProject.url" target="_blank" class="view-project-button">View Project</a>
+    </div>
+  </div>
+</div>

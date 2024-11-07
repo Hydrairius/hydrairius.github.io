@@ -1,6 +1,5 @@
-
 .contact-background {
-  background-image: url('/images/contact.jpg'); 
+  background-image: url('/images/contact.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -13,7 +12,6 @@
   color: #ffffff;
 }
 
-
 .contact-background::before {
   content: '';
   position: absolute;
@@ -21,21 +19,19 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6); 
+  background: rgba(0, 0, 0, 0.8); /* Darker overlay */
   z-index: 1;
 }
-
 
 .contact-form-container {
   position: relative;
   width: 20%;
-  z-index: 2; 
+  z-index: 2;
   padding: 40px;
-  background-color: rgba(0, 0, 0, 0.9); 
+  background-color: #1b1b1f; /* Dark background */
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
-
 
 .form-group {
   margin-bottom: 20px;
@@ -44,21 +40,21 @@
 .form-group label {
   display: block;
   margin-bottom: 8px;
-  color: #ffffff;
+  color: #d9d9d9; /* Light grey text */
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid #b22222;
+  border: 1px solid #b22222; /* Red border */
   border-radius: 4px;
-  background-color: #f8f8f8;
-  color: #333;
+  background-color: #333333; /* Darker input background */
+  color: #d9d9d9; /* Light grey text */
 }
 
 button[type="submit"] {
-  background-color: #b22222;
+  background-color: #b22222; /* Red background */
   color: #ffffff;
   padding: 12px 24px;
   font-size: 1rem;
@@ -66,8 +62,9 @@ button[type="submit"] {
   cursor: pointer;
   width: 100%;
   margin-top: 10px;
+  transition: background-color 0.3s ease;
 }
 
 button[type="submit"]:hover {
-  background-color: #8b0000;
+  background-color: #8b0000; /* Darker red on hover */
 }
